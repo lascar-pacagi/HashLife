@@ -1,0 +1,3 @@
+(executables
+ (names hashlife)
+ (libraries graphics unix str))
