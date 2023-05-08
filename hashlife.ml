@@ -524,8 +524,8 @@ let simulation_names = [
 
 let help_message = {|Main menu:
   - Moving around menu:
-      * up:   Hit the 'w' key.
-      * down: Hit the 's' key.
+      * Up:   Hit the 'w' key.
+      * Down: Hit the 's' key.
   - Hit the 'q' key to close the current menu or action.
   - Select item:      Hit the 'enter' key.
   - Show quadtree:    Toggle the quadtree view.
@@ -546,7 +546,7 @@ let help_message = {|Main menu:
                                      the 'q' key.
                         * Milliseconds: In automatic mode, the number of
                                         milliseconds between each iterations.
-                        * start: Start the game of life.
+                        * Start: Start the game of life.
   - Statistics:       Statistics about the quadtree and the memoization.
   - Load:             Load a file with format Life 1.05.
   - Help:             This menu.
@@ -791,7 +791,7 @@ let draw_statistics () =
   - Quadtree # of levels: %d
   - # of cells          : %d
   - # of generations    : %d
-  - memoization size    : %d|}
+  - Memoization size    : %d|}
   (size data.quadtree)
   (level data.quadtree)
   (population data.quadtree)
@@ -832,7 +832,7 @@ let draw () =
         |> List.map (fun (x, y) -> (x + data.xoffset, y + data.yoffset))
         |> draw_cells ~color:Graphics.yellow
     | Simulation { item; nb_steps; automatic; ms; executing } ->
-        if not executing then draw_option_list item simulation_names [nb_steps; automatic; ms; "start"]
+        if not executing then draw_option_list item simulation_names [nb_steps; automatic; ms; "Start"]
     | Statistics ->
         draw_statistics ()
     | Load { item; filenames } ->
